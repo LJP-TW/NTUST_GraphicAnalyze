@@ -48,6 +48,10 @@ def imgToString(image):
                     #         print('(x + pX, y + pY) = (%d, %d)' % (x + pX, y + pY))
                         flag = False
                         break
+                    # else:
+                    #     if filename == 'g.pos':
+                    #         print('(pX, pY) = (%d, %d)' % (pX, pY))
+                    #         print('(x + pX, y + pY) = (%d, %d)' % (x + pX, y + pY))
                 if flag == True:
                     convertList.append((x, filename[:-4].upper()))
 
@@ -81,3 +85,6 @@ def imgToString(image):
 for filename in os.listdir('./img/nonResolve'):
     image = Image.open('./img/nonResolve/' + filename)
     print('(file, resolve) = (%s, %s)' % (filename, imgToString(image)))
+
+# image = Image.open('./img/nonResolve/883FGY.png')
+# print('(file, resolve) = (%s, %s)' % ('883FGY', imgToString(image)))
