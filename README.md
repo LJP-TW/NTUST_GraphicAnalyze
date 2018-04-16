@@ -26,5 +26,5 @@ print(imageStr)
 
 # Screen Shot
 
-  - 18/04/16 尚有點bug
-![2018-04-16 20-53-39](https://user-images.githubusercontent.com/26863912/38810094-4e077e70-41b8-11e8-9459-0484e14044b8.png)
+  - 18/04/16
+![2018-04-16 21-19-02](https://user-images.githubusercontent.com/26863912/38811434-0dfa3a30-41bc-11e8-82f1-f8a2eb4c60b2.png)
