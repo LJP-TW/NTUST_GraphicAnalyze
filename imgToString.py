@@ -61,6 +61,10 @@ def imgToString(image):
         if abs(pX - oldpX) <= 3:
             if char == oldChar:
                 del convertList[index]
+            elif oldChar == '1' and char == '4':
+                convertList.remove((oldpX, oldChar))
+                oldpX = pX
+                oldChar = char
             elif oldChar == 'L' and char == 'B':
                 convertList.remove((oldpX, oldChar))
                 oldpX = pX
@@ -73,18 +77,33 @@ def imgToString(image):
                 oldChar = char
             elif oldChar == 'R' and char == 'F':
                 convertList.remove((pX, char))
+            elif oldChar == 'E' and char == 'J':
+                convertList.remove((pX, char))
         else:
             oldpX = pX
             oldChar = char
-    result = ''
+    tempResult = ''
     for (index, char) in convertList:
-        result += char
+        tempResult += char
     # print(convertList)
+
+    numeric = 0
+    alpha = 0
+    result = ''
+    for c in tempResult:
+        if c >= '0' and c <= '9':
+            if numeric < 3:
+                result += c
+                numeric += 1
+        else:
+            if numeric == 3:
+                result += c
+
     return result
 
 for filename in os.listdir('./img/nonResolve'):
     image = Image.open('./img/nonResolve/' + filename)
     print('(file, resolve) = (%s, %s)' % (filename, imgToString(image)))
 
-# image = Image.open('./img/nonResolve/883FGY.png')
-# print('(file, resolve) = (%s, %s)' % ('883FGY', imgToString(image)))
+# image = Image.open('./img/nonResolve/545HEJ.png')
+# print('(file, resolve) = (%s, %s)' % ('545HEJ', imgToString(image)))
